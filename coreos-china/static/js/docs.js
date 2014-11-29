@@ -1,1 +1,0 @@
-$(function(){$(".coreos-docs-sidenav").tocify({selectors:"h2,h3"});$(".coreos-docs-sidenav a").attr({"data-category":"Docs Sidebar","data-event":"Docs: IntraPage"});});
