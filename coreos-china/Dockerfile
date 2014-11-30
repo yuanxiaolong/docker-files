@@ -1,25 +1,21 @@
-FROM google/golang
+FROM google/golang:stable
 EXPOSE 8080
-
-yum -y install git
 
 
 WORKDIR /gopath/src/coreos-china.org
 ADD . /gopath/src/coreos-china.org/
 
 RUN go get -u github.com/astaxie/beego
-RUN go get -u github.com/gpmgo/gopm
+RUN go get -u github.com/magiconair/properties
+RUN go get -u github.com/russross/blackfriday
+
+RUN mkdir -p /conf/
+RUN cp -r /gopath/src/coreos-china.org/conf/* /conf/
+
+RUN go get coreos-china.org
 
 
-WORKDIR /gopath/src/coreos-china.org/
-
-RUN cd /gopath/src/coreos-china.org/
-RUN git clone git@github.com:CoreOS-China/coreos-china.org.git
-
-RUN gopm build
-
-
-CMD ["./coreos-china.org"]
+CMD ["/gopath/bin/coreos-china.org"]
 
 #
 # build:  docker build -t yuanxiaolong/coreos-china .
