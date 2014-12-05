@@ -1,4 +1,4 @@
-FROM redis:latest
+FROM redis:2.8.17
 EXPOSE 6379
 VOLUME ["/data"]
 
