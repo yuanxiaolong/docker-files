@@ -18,13 +18,13 @@
                   {
                     "containerPort": 6379, 
                     "hostPort": 6379
-                  },
-                "volumeMounts": [
+                  }
+               ],
+               "volumeMounts": [
                   {
                     "name": "redis-master-data",
                     "mountPath": "/data"
                   }
-                ]
                ]
              }
            ],
