@@ -32,7 +32,10 @@
             {
               "name": "redis-master-data",
               "source": {
-                "hostDir":"~/var/data/redis/master-data"
+                "hostDir": 
+                  {
+                   "path": "/home/core/var/data/redis/master-data"
+                  }
               }
             }
           ]

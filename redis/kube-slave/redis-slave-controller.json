@@ -32,7 +32,10 @@
             {
               "name": "redis-slave-data",
               "source": {
-                "hostDir":"~/var/data/redis/slave-data"
+                "hostDir": 
+                  {
+                   "path": "/home/core/var/data/redis/slave-data"
+                  }
               }
             }
           ]
