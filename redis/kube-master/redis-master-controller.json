@@ -1,27 +1,27 @@
 {
-  "id": "redisSlaveController",
+  "id": "redisMasterController",
   "kind": "ReplicationController",
   "apiVersion": "v1beta1",
   "desiredState": {
     "replicas": 1,
-    "replicaSelector": {"name": "redis-slave"},
+    "replicaSelector": {"name": "redis-master"},
     "podTemplate": {
       "desiredState": {
          "manifest": {
            "version": "v1beta1",
-           "id": "redisSlaveController",
+           "id": "redisMasterController",
            "containers": [
              {
-               "name": "slave",
-               "image": "yuanxiaolong/redis-slave",
+               "name": "master",
+               "image": "redis:2.8.17",
                "ports": [
                   {
                     "containerPort": 6379, 
-                    "hostPort": 6380
+                    "hostPort": 6379
                   },
                 "volumeMounts": [
                   {
-                    "name": "redis-slave-data",
+                    "name": "redis-master-data",
                     "mountPath": "/data"
                   }
                 ]
@@ -30,16 +30,16 @@
            ],
           "volumes": [
             {
-              "name": "redis-slave-data"
+              "name": "redis-master-data"
               "source": {
-                "hostDir":"~/var/data/redis/slave-data"
+                "hostDir":"~/var/data/redis/master-data"
               }
             }
           ]
         }
       },
-       "labels": {"name": "redis-slave"}
+       "labels": {"name": "redis-master"}
     }
   },
-  "labels": {"name": "redis-slave"}
+  "labels": {"name": "redis-master"}
 }

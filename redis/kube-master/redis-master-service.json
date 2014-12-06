@@ -4,6 +4,9 @@
   "apiVersion": "v1beta1",
   "port": 10000,
   "containerPort": 6379,
+  "labels": {
+    "name": "redis-master"
+  },
   "selector": {
     "name": "redis-master"
   }

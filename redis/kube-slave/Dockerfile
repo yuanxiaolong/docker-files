@@ -18,5 +18,5 @@ CMD ["./start-slave.sh"]
 #
 # build:  docker build -t yuanxiaolong/redis-slave .
 # run:    /opt/bin/kubecfg -h http://127.0.0.1:8080 -c redis-slave-controller.json create replicationControllers
-#					/opt/bin/kubecfg -h http://127.0.0.1:8080 -c redis-slave-service.json create services
+#	  /opt/bin/kubecfg -h http://127.0.0.1:8080 -c redis-slave-service.json create services
 #

@@ -6,14 +6,32 @@
     "manifest": {
       "version": "v1beta1",
       "id": "redis-master",
-      "containers": [{
-        "name": "master",
-        "image": "redis:2.8.17",
-        "ports": [{
-          "containerPort": 6379,
-          "hostPort": 6379
-        }]
-      }]
+      "containers": [
+        {
+          "name": "master",
+          "image": "redis:2.8.17",
+          "ports": [
+            {
+              "containerPort": 6379,
+              "hostPort": 6379
+            }
+          ],
+          "volumeMounts": [
+            {
+              "name": "redis-master-data",
+              "mountPath": "/data"
+            }
+          ]
+        }
+      ],
+      "volumes": [
+        {
+          "name": "redis-master-data"
+          "source": {
+            "hostDir":"~/var/data/redis/master-data"
+          }
+        }
+      ]
     }
   },
   "labels": {
