@@ -30,7 +30,7 @@
            ],
           "volumes": [
             {
-              "name": "redis-slave-data"
+              "name": "redis-slave-data",
               "source": {
                 "hostDir":"~/var/data/redis/slave-data"
               }

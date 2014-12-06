@@ -30,7 +30,7 @@
            ],
           "volumes": [
             {
-              "name": "redis-master-data"
+              "name": "redis-master-data",
               "source": {
                 "hostDir":"~/var/data/redis/master-data"
               }
