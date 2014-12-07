@@ -19,26 +19,9 @@
                     "key": "VIRTUAL_HOST", 
                     "value": "yuanxiaolong.cn,www.yuanxiaolong.cn"
                   }
-               ],
-               "volumeMounts": [
-                  {
-                    "name": "zh-CN",
-                    "mountPath": "/gopath/src/coreos-china.org/static/ZH_CN/"
-                  }
                ]
              }
-           ],
-          "volumes": [
-            {
-              "name": "zh-CN",
-              "source": {
-                "hostDir": 
-                  {
-                   "path": "/home/core/var/data/coreosChina/"
-                  }
-              }
-            }
-          ]
+           ]
         }
       },
        "labels": {"name": "coreosChina"}
