@@ -1,0 +1,48 @@
+{
+  "id": "coreosChinaController",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 2,
+    "replicaSelector": {"name": "coreosChina"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "coreosChinaController",
+           "containers": [
+             {
+               "name": "coreosChina",
+               "image": "yuanxiaolong/coreos-china",
+               "env": [
+                  {
+                    "key": "VIRTUAL_HOST", 
+                    "value": "yuanxiaolong.cn,www.yuanxiaolong.cn"
+                  }
+               ],
+               "volumeMounts": [
+                  {
+                    "name": "zh-CN",
+                    "mountPath": "/gopath/src/coreos-china.org/static/ZH_CN/"
+                  }
+               ]
+             }
+           ],
+          "volumes": [
+            {
+              "name": "zh-CN",
+              "source": {
+                "hostDir": 
+                  {
+                   "path": "/home/core/var/data/coreosChina/"
+                  }
+              }
+            }
+          ]
+        }
+      },
+       "labels": {"name": "coreosChina"}
+    }
+  },
+  "labels": {"name": "coreosChina"}
+}
