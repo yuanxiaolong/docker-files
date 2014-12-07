@@ -12,8 +12,14 @@
            "id": "coreosChinaController",
            "containers": [
              {
-               "name": "coreosChina",
+               "name": "coreos-zh",
                "image": "yuanxiaolong/coreos-china",
+               "ports": [
+                  {
+                    "containerPort": 8080, 
+                    "hostPort": 80
+                  }
+               ],
                "env": [
                   {
                     "key": "VIRTUAL_HOST", 
