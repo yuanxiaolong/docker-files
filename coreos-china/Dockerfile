@@ -14,6 +14,8 @@ RUN cp -r /gopath/src/coreos-china.org/conf/* /conf/
 
 RUN go get coreos-china.org
 
+VOLUME ["/gopath/src/coreos-china.org/static/ZH_CN/"]
+
 
 CMD ["/gopath/bin/coreos-china.org"]
 
